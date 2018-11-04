@@ -19,7 +19,7 @@ skel.init({
 	// Used on the local website.
 	//prefix: getRootPath_dc() + 'coding/blog/blog_alpha/' + 'css/style',
 	// Used on the remote website.
-	prefix: getRootPath_dc() + '/css/style',
+	prefix: 'https://shallwe999.github.io' + '/css/style',
 	resetCSS: true,
 	boxModel: 'border',
 	grid: {
