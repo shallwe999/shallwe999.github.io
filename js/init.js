@@ -16,9 +16,10 @@ function getRootPath_dc() {
 }
 
 skel.init({
-	// Used on the local.
-	prefix: getRootPath_dc() + 'coding/blog/blog_alpha/' + 'css/style',
-	//prefix: getRootPath_dc() + 'css/style',
+	// Used on the local website.
+	//prefix: getRootPath_dc() + 'coding/blog/blog_alpha/' + 'css/style',
+	// Used on the remote website.
+	prefix: getRootPath_dc() + '/css/style',
 	resetCSS: true,
 	boxModel: 'border',
 	grid: {
@@ -65,8 +66,8 @@ skel.init({
 			}
 		}
 	}
-	
-	
+
+
 });
 
 
@@ -97,16 +98,16 @@ $().ready(function(){
 window.onload = (function() {
 	var e = document.getElementById('github-usercard');
 	var username = e.getAttribute("user");
-  
+
 	if (username) {
 	  var api_url = 'https://api.github.com/users/' + username;
 	} else {
 	  return fail();
 	}
-  
+
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function() {
-	  if (request.readyState === 4) { 
+	  if (request.readyState === 4) {
 		if (request.status === 200) {
 		  return success(request.responseText);
 		} else {
@@ -116,11 +117,11 @@ window.onload = (function() {
 		// HTTP is continuing....
 	  }
 	}
-  
+
 	// Sent request
 	request.open('GET', api_url);
 	request.send();
-  
+
 	function success(text) {
 	  var response_obj = JSON.parse(request.responseText)
 	  var s =
@@ -151,9 +152,9 @@ window.onload = (function() {
 		'</div>';
 	  e.innerHTML = s;
 	}
-  
+
 	function fail() {
 	  e.innerHTML = "Get user info failed.";
 	}
 });
-  
+
