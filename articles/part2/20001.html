@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Shallwe的个人小站</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="https://cdn.bootcss.com/jquery/1.2.3/jquery.min.js"></script>
+		<script src="../../js/skel.min.js"></script>
+		<script src="../../js/skel-panels.min.js"></script>
+		<script src="../../js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="../../css/skel-noscript.css" />
+			<link rel="stylesheet" href="../../css/style.css" />
+			<link rel="stylesheet" href="../../css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+		<div id="header">
+			<div class="container"> 
+				
+				<!-- Logo -->
+				<div id="logo">
+					<h1><a href="../../index.html">Shallwe的个人小站</a></h1>
+					<span>  </span>
+				</div>
+				
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a href="../../index.html">homepage</a></li>
+						<li class="active"><a href="../index.html">articles</a></li>
+						<li><a href="../../about.html">about</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<!-- Main -->
+		<div id="main">
+			<div class="container">
+				<div class="row"> 
+
+					<!-- Content -->
+					<div id="content" class="8u skel-cell-important">
+						<section>
+							<header>
+								<h2>《Git学习指南》学习笔记</h2>
+								<span class="byline"> </span>
+							</header>
+							<ul class="style"><p class="posted">日期：2018/10/20  作者：Shallwe</p></ul>
+							<ul class="style"><p class="posted">分类：学习笔记</p></ul>
+							<a class="image incontent"><img src="../../images/20001.jpg"></a>
+							
+
+
+<p class="intro">　　在大二的时候接触了Git即<b>版本控制系统</b>，在学习的时候可能用的机会不多，但在实际工作中和团队协作中它能起到很大的作用。虽然入门会稍微难一点，但是功能很强大很值得学。我分享的是自己在阅读《Git学习指南》和其他资料的过程中记录的<b>入门笔记</b>。有一些部分我没有深究就跳过了。当时写的时候可能会比较粗糙望见谅。如有错误也望指点。</p>
+
+
+							
+<p> <!--HTMLBUILERPART0-->
+<h3>【第1章 基本概念】</h3>
+　　Git是分布式版本控制系统。<BR> 
+　　分支的创建与合并。<BR> 
+
+<h3>【第2章 入门】</h3>
+　　修改Git for Windows的HOME环境变量<BR> 
+　　　　打开cmd，输入sysdm.cpl，高级-&gt;环境变量<BR> 
+　　初次使用要配置机器<BR> 
+	　　git config --global user.name "..."<BR> 
+　　git config --global user.email "..."<BR> 
+　　创建版本库 git init<BR> 
+　　首次提交<BR> 
+　　　　1. git add .　　git add a.txt （版本中添加）　　git rm a.txt （版本中删除）<BR> 
+　　　　2. git commit --message "新的版本..."<BR> 
+　　检查状态　git status<BR> 
+　　显示日志　git log　（--oneline 更简洁）（--gragh 图形化）<BR> 
+　　　　　　　　　　（--stat 显示被修改的文件）（-n 3 最近3次）<BR> 
+　　协作功能<BR> 
+　　克隆版本库 git clone /pro1 /pro1_clone<BR> 
+　　git pull<BR> 
+　　　　将原版本库中的新提交传递给它的克隆体（在克隆体目录进行）<BR> 
+　　　　pull（拉回）从原版本库中取回新的修改<BR> 
+　　　　如果发生了冲突，则需要手动挑选文件<BR> 
+　　git pull /pro1_clone master （在原版本库中拉回克隆体的修改）（在原版本目录进行）<BR> 
+　　共享版本库<BR> 
+　　　　创建裸版本库　git clone --bare /pro1 /pro1_bare.git<BR> 
+　　　　裸版本库用来充当开发者们push的汇聚点，用来交换提交<BR> 
+　　git push<BR> 
+　　　　向指定版本库传送提交　git push /pro1_bare.git master<BR> 
+　　　　让克隆版本也得到该修改用pull<BR> 
+
+	<h3>【第3章 提交究竟是什么】</h3>
+　　每一次提交都带有提交的散列值 40个字符组成的编码<BR> 
+　　在Git中，回复到某一版本通常称之为检出（checkout）操作<BR> 
+　　git diff (散列值)　　 比较两次提交之间的差异（--stat 显示文件修改）<BR> 
+　　git diff --word-diff　按单词显示所做的修改<BR><BR> 
+
+	<h3>【第4章 多次提交】</h3>
+　　工作区 -- 暂存区 -- 版本库<BR> 
+　　git diff --staged　显示暂存区与提交的不同<BR> 
+　　git diff　　　　　 显示暂存区与工作区的不同<BR> 
+　　git reset HEAD .　 重置暂存区，撤回修改<BR> 
+　　使用 .gitignore 忽略非版本控制文件<BR> 
+　　　　在文件中写好路径即可忽略<BR> 
+　　git stash　将工作区和暂存区的修改保存在储藏栈（stash stack）的缓存区中<BR> 
+　　git stash pop　恢复被储藏的修改<BR> 
+　　git stash list　列出储藏栈<BR> 
+
+	
+	<h3>【第5章 版本库】</h3>
+　　讲的是底层结构（管道层）<BR>
+
+	<h3>【第6章 分支】</h3>
+　　git branch new_branch1　　 创建新分支<BR> 
+　　git branch --list　　　　　查看所有分支<BR> 
+　　git checkout new_branch1　 切换到分支<BR> 
+　　git branch -d new_branch1　删除分支（-D强制删除）<BR> 
+　　checkout被拒绝（由于工作区还存在着一些修改）时解决办法<BR> 
+　　　　1. 提交修改即可　　　git commit --all<BR> 
+　　　　2. 放弃修改强制切换　git checkout --force new_branch1<BR> 
+　　　　3. 储藏修改即可　　　git stash　（git stash pop恢复）<BR> 
+　　恢复被删除分支<BR> 
+　　　　1. git reflog　查找要恢复分支的散列值<BR> 
+　　　　2. git branch new_branch1 d765a1e　敲入散列值恢复<BR> 
+
+	<h3>【第7章 合并分支】</h3>
+　　git merge new_branch1　合并分支（在要合并的分支上如master）<BR> 
+　　手动合并解决冲突<BR> 
+　　　　法一：手动编辑受影响文件至不冲突<BR> 
+　　　　法二：git checkout --theirs tests/　（--theirs只采用别人的版本文件）<BR> 
+　　　　　　　git checkout --ours tests/　　（--ours　只采用自己的版本文件）<BR> 
+　　　　最后再 git add . 和 git commit<BR> 
+　　快进合并<BR> 
+　　　　一条线上，一个分支没有动，而另一个分支一只更新，要把落后的分支快进合并<BR> 
+　　　　git checkout behind_branch<BR> 
+　　　　git merge front_branch<BR> 
+
+	<h3>【第8章 通过变基净化历史】</h3>
+　　git rebase master　可以将带有很多小分支和分岔的历史改造成一部较为平滑的线性历史<BR> 
+　　移植分支等，了解一下<BR> 
+
+	<h3>【第9章 版本库间的交换】</h3>
+　　有很多协议来访问版本库，如file,http,ftp,ssh等<BR> 
+　　如 git clone file:///Users/git_book.git<BR> 
+　　给版本库起名字，使用git remote add<BR> 
+　　　　git remote add MyClone file:///tmp/git_book_clone.git<BR> 
+　　去掉名字，使用git remote rm<BR> 
+　　　　git remote rm MyClone<BR> 
+　　查看推送提交路径　git remote --verbose<BR> 
+　　从另一个版本库中获取提交（将克隆版本库传送到本地版本库）<BR> 
+　　　　git fetch MyClone<BR> 
+　　将本地提交传送到远程版本库，使用push<BR> 
+　　　　git push clone feature-a<BR> 
+　　　　（推送至clone所指向的远程版本库并更新分支指针）<BR> 
+　　显示远程跟踪分支<BR> 
+　　　　git branch -r<BR> 
+　　从远程分支中分岔出一个本地分支<BR> 
+　　　　git checkout -b feature-b clone/feature-b<BR> 
+　　利用本地分支操作别处的版本库<BR> 
+　　　　git fetch clone feature-b:my-feature-b　（别处分支名:本地分支名）<BR> 
+　　pull = fetch + merge<BR> 
+　　提交本地test分支，作为远程的master分支<BR> 
+　　　　git push origin test:master<BR> 
+　　删除远程版本库中的分支<BR> 
+　　　　git push clone :feature-a<BR> 
+
+	<h3>【第10章 版本标签】</h3>
+　　为一个分支创建标签（-m为注释）<BR> 
+　　　　git tag 1.1.0.0 master "Freshly built"<BR> 
+　　推送标签<BR> 
+　　　　git push origin 1.1.0.0<BR> 
+　　在日志中查看标签<BR> 
+　　　　git log --decorate<BR> 
+
+	<h3>【其它】</h3>
+　　git gui　图形界面<BR> 
+
+　　新建远程仓库，将代码上传到Github的示例操作：<BR> 
+	<p class="coding">echo "# New Repo" >> README.md<BR> 
+	git init<BR> 
+	git add README.md<BR> 
+	git commit -m "first commit"<BR> 
+	git remote add origin https://github.com/github-id/repo-id.git<BR> 
+	git push -u origin master</p>
+
+	<h3>【Issues】</h3>
+　　git pull 提示 fatal: refusing to merge unrelated histories （新建远程仓库常遇到）<BR> 
+　　　　两个根本不相干的 git 库，一个是本地库，一个是远端库，然后本地要去推送到远端，远端觉得这个本地库跟自己不相干，所以告知无法合并。<BR> 
+　　　　解决方法一：从远端库拉下来代码，本地要加入的代码放到远端库下载到本地的库，再上传。<BR> 
+　　　　解决方法二：不相干的分支强行合并。 git pull origin master --allow-unrelated-histories
+<!--/HTMLBUILERPART0--><br>
+<br>
+</p>
+
+
+
+
+
+
+
+
+
+						</section>
+					</div>
+					
+					<!-- Sidebar -->
+					<div id="sidebar" class="4u">
+						<section>
+							<header>
+								<h2>文章分类</h2>
+							</header>
+							<ul class="style">
+									<div>
+										<h2>软件项目</h2>
+										<p>分享自己制作的应用程序、开源项目等。</p>
+										<h2> </h2>
+									</div>
+									<div>
+										<h2>学习笔记</h2>
+										<p>分享一些学习时的相关笔记记录。</p>
+										<h2> </h2>
+									</div>
+									<div>
+										<h2>电子设计</h2>
+										<p>介绍一些自己做过的电子设计作品。</p>
+										<h2> </h2>
+									</div>
+							</ul>
+						</section>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Copyright -->
+		<div id="copyright">
+			<div class="container">
+				<a href="https://shallwe999.github.io/" target="_blank" title="Shallwe的个人小站">Shallwe的个人小站</a> ©2018
+			</div>
+		</div>
+		
+		<div id="sriLink" class="back_top" onclick="clickBackToTop()" style="display: none;">
+			<a href="javascript:void(0);"><img src="../../images/uparrow.png" alt="" /></a>
+		</div>
+
+</body>
+</html>
