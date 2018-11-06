@@ -161,14 +161,15 @@
 
 	#content h3
 	{
-		font-family: Arial, Tahoma, "Microsoft YaHei", "微软雅黑";
+		font-family: Arial, Tahoma, "SimSuncss", "宋体";
+		font-weight: bold;
 		font-size: 1.5em;
-		margin: 1.8em 0 0.8em 0;
+		margin: 1.5em 0 0.8em 0;
 	}
 
 	#content h4
 	{
-		font-family: Arial, Tahoma, "Microsoft YaHei", "微软雅黑";
+		font-family: Arial, Tahoma, "SimSuncss", "宋体";
 		font-size: 1.2em;
 		margin: 0.3em 0 0.3em 0;
 	}

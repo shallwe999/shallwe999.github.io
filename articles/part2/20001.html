@@ -6,6 +6,8 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="../../css/github-theme.css" type='text/css'>  <!-- Github code theme -->
+
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
 		<script src="https://cdn.bootcss.com/jquery/1.2.3/jquery.min.js"></script>
 		<script src="../../js/skel.min.js"></script>
@@ -54,8 +56,7 @@
 								<h2>《Git学习指南》学习笔记</h2>
 								<span class="byline"> </span>
 							</header>
-							<ul class="style"><p class="posted">日期：2018/10/20  作者：Shallwe</p></ul>
-							<ul class="style"><p class="posted">分类：学习笔记</p></ul>
+							<ul class="style"><p class="posted">作者：Shallwe　　创建日期：2018/10/20　　修改日期：2018/11/06　　分类：学习笔记</p></ul>
 							<a class="image incontent"><img src="../../images/20001.jpg"></a>
 							
 
@@ -64,140 +65,211 @@
 
 
 							
-<p> <!--HTMLBUILERPART0-->
-<h3>【第1章 基本概念】</h3>
-　　Git是分布式版本控制系统。<BR> 
-　　分支的创建与合并。<BR> 
+<div class="markdown-preview">
+<h2 class="mume-header" id="%E4%B8%80%E7%82%B9%E5%BB%BA%E8%AE%AE">&#x4E00;&#x70B9;&#x5EFA;&#x8BAE;</h2>
 
-<h3>【第2章 入门】</h3>
-　　修改Git for Windows的HOME环境变量<BR> 
-　　　　打开cmd，输入sysdm.cpl，高级-&gt;环境变量<BR> 
-　　初次使用要配置机器<BR> 
-	　　git config --global user.name "..."<BR> 
-　　git config --global user.email "..."<BR> 
-　　创建版本库 git init<BR> 
-　　首次提交<BR> 
-　　　　1. git add .　　git add a.txt （版本中添加）　　git rm a.txt （版本中删除）<BR> 
-　　　　2. git commit --message "新的版本..."<BR> 
-　　检查状态　git status<BR> 
-　　显示日志　git log　（--oneline 更简洁）（--gragh 图形化）<BR> 
-　　　　　　　　　　（--stat 显示被修改的文件）（-n 3 最近3次）<BR> 
-　　协作功能<BR> 
-　　克隆版本库 git clone /pro1 /pro1_clone<BR> 
-　　git pull<BR> 
-　　　　将原版本库中的新提交传递给它的克隆体（在克隆体目录进行）<BR> 
-　　　　pull（拉回）从原版本库中取回新的修改<BR> 
-　　　　如果发生了冲突，则需要手动挑选文件<BR> 
-　　git pull /pro1_clone master （在原版本库中拉回克隆体的修改）（在原版本目录进行）<BR> 
-　　共享版本库<BR> 
-　　　　创建裸版本库　git clone --bare /pro1 /pro1_bare.git<BR> 
-　　　　裸版本库用来充当开发者们push的汇聚点，用来交换提交<BR> 
-　　git push<BR> 
-　　　　向指定版本库传送提交　git push /pro1_bare.git master<BR> 
-　　　　让克隆版本也得到该修改用pull<BR> 
+<p>&#x2003;&#x2003;Git&#x6211;&#x5165;&#x95E8;&#x7684;&#x65F6;&#x5019;&#x5176;&#x5B9E;&#x770B;&#x4E86;&#x5F88;&#x591A;&#x904D;&#xFF0C;&#x611F;&#x89C9;&#x5BF9;&#x4E8E;&#x6CA1;&#x63A5;&#x89E6;&#x8FC7;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;&#x548C;&#x5206;&#x5E03;&#x5F0F;&#x7CFB;&#x7EDF;&#x7684;&#x4EBA;&#x6765;&#x8BF4;&#x8FD8;&#x662F;&#x6709;&#x4E00;&#x70B9;&#x96BE;&#x5EA6;&#x3002;&#x4E0D;&#x8FC7;&#x786E;&#x5B9E;&#x597D;&#x7528;&#x3002;<br>
+&#x2003;&#x2003;&#x5B66;&#x4E60;Git&#x91CD;&#x5728;&#x5B9E;&#x8DF5;&#xFF0C;&#x5EFA;&#x8BAE;&#x5B66;&#x4E60;&#x65F6;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E2A;&#x4EBA;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#xFF08;&#x63A8;&#x8350;Github / Gitlab / Gitee&#xFF09;&#xFF0C;&#x8FB9;&#x5B66;&#x4E60;&#x8FB9;&#x5B9E;&#x8DF5;&#xFF0C;&#x5B66;&#x8D77;&#x6765;&#x4F1A;&#x5F88;&#x5FEB;&#xFF0C;&#x4E5F;&#x4E0D;&#x6015;&#x5F04;&#x574F;&#x3002;&#x521D;&#x5B66;&#x8BB0;&#x5F97;&#x6570;&#x636E;&#x90FD;&#x8981;&#x5907;&#x4EFD;&#xFF0C;&#x4E0D;&#x8981;&#x641E;&#x4E22;&#x4E86;&#x3002;</p>
+<h2 class="mume-header" id="%E6%8E%A8%E8%8D%90%E8%B5%84%E6%96%99">&#x63A8;&#x8350;&#x8D44;&#x6599;</h2>
 
-	<h3>【第3章 提交究竟是什么】</h3>
-　　每一次提交都带有提交的散列值 40个字符组成的编码<BR> 
-　　在Git中，回复到某一版本通常称之为检出（checkout）操作<BR> 
-　　git diff (散列值)　　 比较两次提交之间的差异（--stat 显示文件修改）<BR> 
-　　git diff --word-diff　按单词显示所做的修改<BR><BR> 
+<ul>
+<li class="point"><a href="https://www.git-scm.com/book/zh/v2">&#x300A;Pro Git&#x300B;&#xFF08;&#x4E2D;&#x6587;&#x7248;&#xFF09;</a></li>
+<li class="point"><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">Git&#x6559;&#x7A0B; - &#x5ED6;&#x96EA;&#x5CF0;&#x7684;&#x5B98;&#x65B9;&#x7F51;&#x7AD9;</a></li>
+</ul>
+<h2 class="mume-header" id="git%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97%E7%AC%94%E8%AE%B0">&#x300A;Git&#x5B66;&#x4E60;&#x6307;&#x5357;&#x300B;&#x7B14;&#x8BB0;</h2>
 
-	<h3>【第4章 多次提交】</h3>
-　　工作区 -- 暂存区 -- 版本库<BR> 
-　　git diff --staged　显示暂存区与提交的不同<BR> 
-　　git diff　　　　　 显示暂存区与工作区的不同<BR> 
-　　git reset HEAD .　 重置暂存区，撤回修改<BR> 
-　　使用 .gitignore 忽略非版本控制文件<BR> 
-　　　　在文件中写好路径即可忽略<BR> 
-　　git stash　将工作区和暂存区的修改保存在储藏栈（stash stack）的缓存区中<BR> 
-　　git stash pop　恢复被储藏的修改<BR> 
-　　git stash list　列出储藏栈<BR> 
+<h3 class="mume-header" id="%E7%AC%AC1%E7%AB%A0-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">&#x3010;&#x7B2C;1&#x7AE0; &#x57FA;&#x672C;&#x6982;&#x5FF5;&#x3011;</h3>
 
-	
-	<h3>【第5章 版本库】</h3>
-　　讲的是底层结构（管道层）<BR>
+<p>Git&#x662F;&#x5206;&#x5E03;&#x5F0F;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;&#x3002;<br>
+&#x7248;&#x672C;&#x5E93;&#x7684;&#x6784;&#x6210;&#xFF1A;&#x6587;&#x4EF6;&#xFF08;blob&#xFF09;&#xFF0C;&#x76EE;&#x5F55;&#xFF08;tree&#xFF09;&#xFF0C;&#x7248;&#x672C;&#xFF08;commit&#xFF09;<br>
+&#x5206;&#x652F;&#x7684;&#x521B;&#x5EFA;&#x4E0E;&#x5408;&#x5E76;&#x3002;</p>
+<h3 class="mume-header" id="%E7%AC%AC2%E7%AB%A0-%E5%85%A5%E9%97%A8">&#x3010;&#x7B2C;2&#x7AE0; &#x5165;&#x95E8;&#x3011;</h3>
 
-	<h3>【第6章 分支】</h3>
-　　git branch new_branch1　　 创建新分支<BR> 
-　　git branch --list　　　　　查看所有分支<BR> 
-　　git checkout new_branch1　 切换到分支<BR> 
-　　git branch -d new_branch1　删除分支（-D强制删除）<BR> 
-　　checkout被拒绝（由于工作区还存在着一些修改）时解决办法<BR> 
-　　　　1. 提交修改即可　　　git commit --all<BR> 
-　　　　2. 放弃修改强制切换　git checkout --force new_branch1<BR> 
-　　　　3. 储藏修改即可　　　git stash　（git stash pop恢复）<BR> 
-　　恢复被删除分支<BR> 
-　　　　1. git reflog　查找要恢复分支的散列值<BR> 
-　　　　2. git branch new_branch1 d765a1e　敲入散列值恢复<BR> 
+<p>&#x4FEE;&#x6539;Git for Windows&#x7684;HOME&#x73AF;&#x5883;&#x53D8;&#x91CF;</p>
+<ul>
+<li class="point">&#x6253;&#x5F00;cmd&#xFF0C;&#x8F93;&#x5165;sysdm.cpl&#xFF0C;&#x9AD8;&#x7EA7;-&gt;&#x73AF;&#x5883;&#x53D8;&#x91CF;</li>
+</ul>
+<p>&#x521D;&#x6B21;&#x4F7F;&#x7528;&#x8981;&#x914D;&#x7F6E;&#x673A;&#x5668;</p>
+<ul>
+<li class="point"><code>git config --global user.name &quot;...&quot;</code></li>
+<li class="point"><code>git config --global user.email &quot;...&quot;</code></li>
+</ul>
+<p>&#x521B;&#x5EFA;&#x7248;&#x672C;&#x5E93;</p>
+<ul>
+<li class="point"><code>git init</code></li>
+</ul>
+<p>&#x9996;&#x6B21;&#x63D0;&#x4EA4;</p>
+<ul>
+<li>
+<li class="point">1. <code>git add .</code><br>
+<code>git add a.txt</code> &#xFF08;&#x7248;&#x672C;&#x4E2D;&#x6DFB;&#x52A0;&#xFF09;<br>
+<code>git rm a.txt</code> &#xFF08;&#x7248;&#x672C;&#x4E2D;&#x5220;&#x9664;&#xFF09;</li>
+</li>
+<li>
+<li class="point">2. <code>git commit --message &quot;&#x65B0;&#x7684;&#x7248;&#x672C;...&quot;</code></li>
+</li>
+</ul>
+<p>&#x68C0;&#x67E5;&#x72B6;&#x6001;</p>
+<ul>
+<li class="point"><code>git status</code></li>
+</ul>
+<p>&#x663E;&#x793A;&#x65E5;&#x5FD7;</p>
+<ul>
+<li class="point"><code>git log</code>  &#xFF08;--oneline &#x66F4;&#x7B80;&#x6D01;&#xFF09;&#xFF08;--gragh &#x56FE;&#x5F62;&#x5316;&#xFF09;&#xFF08;--stat &#x663E;&#x793A;&#x88AB;&#x4FEE;&#x6539;&#x7684;&#x6587;&#x4EF6;&#xFF09;&#xFF08;-n 3 &#x6700;&#x8FD1;3&#x6B21;&#xFF09;</li>
+</ul>
+<p>&#x534F;&#x4F5C;&#x529F;&#x80FD;</p>
+<ul>
+<li class="point">&#x514B;&#x9686;&#x7248;&#x672C;&#x5E93; <code>git clone /pro1 /pro1_clone</code></li>
+</ul>
+<p>git pull</p>
+<ul>
+<li class="point">&#x5C06;&#x539F;&#x7248;&#x672C;&#x5E93;&#x4E2D;&#x7684;&#x65B0;&#x63D0;&#x4EA4;&#x4F20;&#x9012;&#x7ED9;&#x5B83;&#x7684;&#x514B;&#x9686;&#x4F53;&#xFF08;&#x5728;&#x514B;&#x9686;&#x4F53;&#x76EE;&#x5F55;&#x8FDB;&#x884C;&#xFF09;</li>
+<li class="point">pull&#xFF08;&#x62C9;&#x56DE;&#xFF09;&#x4ECE;&#x539F;&#x7248;&#x672C;&#x5E93;&#x4E2D;&#x53D6;&#x56DE;&#x65B0;&#x7684;&#x4FEE;&#x6539;</li>
+<li class="point">&#x5982;&#x679C;&#x53D1;&#x751F;&#x4E86;&#x51B2;&#x7A81;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x624B;&#x52A8;&#x6311;&#x9009;&#x6587;&#x4EF6;</li>
+</ul>
+<p><code>git pull /pro1_clone master</code> &#xFF08;&#x5728;&#x539F;&#x7248;&#x672C;&#x5E93;&#x4E2D;&#x62C9;&#x56DE;&#x514B;&#x9686;&#x4F53;&#x7684;&#x4FEE;&#x6539;&#xFF09;&#xFF08;&#x5728;&#x539F;&#x7248;&#x672C;&#x76EE;&#x5F55;&#x8FDB;&#x884C;&#xFF09;</p>
+<p>&#x5171;&#x4EAB;&#x7248;&#x672C;&#x5E93;</p>
+<ul>
+<li class="point">&#x521B;&#x5EFA;&#x88F8;&#x7248;&#x672C;&#x5E93;  <code>git clone --bare /pro1 /pro1_bare.git</code></li>
+<li class="point">&#x88F8;&#x7248;&#x672C;&#x5E93;&#x7528;&#x6765;&#x5145;&#x5F53;&#x5F00;&#x53D1;&#x8005;&#x4EEC;push&#x7684;&#x6C47;&#x805A;&#x70B9;&#xFF0C;&#x7528;&#x6765;&#x4EA4;&#x6362;&#x63D0;&#x4EA4;</li>
+</ul>
+<p>git push</p>
+<ul>
+<li class="point">&#x5411;&#x6307;&#x5B9A;&#x7248;&#x672C;&#x5E93;&#x4F20;&#x9001;&#x63D0;&#x4EA4;  <code>git push /pro1_bare.git master</code></li>
+<li class="point">&#x8BA9;&#x514B;&#x9686;&#x7248;&#x672C;&#x4E5F;&#x5F97;&#x5230;&#x8BE5;&#x4FEE;&#x6539;&#x7528;pull</li>
+</ul>
+<h3 class="mume-header" id="%E7%AC%AC3%E7%AB%A0-%E6%8F%90%E4%BA%A4%E7%A9%B6%E7%AB%9F%E6%98%AF%E4%BB%80%E4%B9%88">&#x3010;&#x7B2C;3&#x7AE0; &#x63D0;&#x4EA4;&#x7A76;&#x7ADF;&#x662F;&#x4EC0;&#x4E48;&#x3011;</h3>
 
-	<h3>【第7章 合并分支】</h3>
-　　git merge new_branch1　合并分支（在要合并的分支上如master）<BR> 
-　　手动合并解决冲突<BR> 
-　　　　法一：手动编辑受影响文件至不冲突<BR> 
-　　　　法二：git checkout --theirs tests/　（--theirs只采用别人的版本文件）<BR> 
-　　　　　　　git checkout --ours tests/　　（--ours　只采用自己的版本文件）<BR> 
-　　　　最后再 git add . 和 git commit<BR> 
-　　快进合并<BR> 
-　　　　一条线上，一个分支没有动，而另一个分支一只更新，要把落后的分支快进合并<BR> 
-　　　　git checkout behind_branch<BR> 
-　　　　git merge front_branch<BR> 
+<p>&#x6BCF;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;&#x90FD;&#x5E26;&#x6709;&#x63D0;&#x4EA4;&#x7684;&#x6563;&#x5217;&#x503C; 40&#x4E2A;&#x5B57;&#x7B26;&#x7EC4;&#x6210;&#x7684;&#x7F16;&#x7801;<br>
+&#x5728;Git&#x4E2D;&#xFF0C;&#x56DE;&#x590D;&#x5230;&#x67D0;&#x4E00;&#x7248;&#x672C;&#x901A;&#x5E38;&#x79F0;&#x4E4B;&#x4E3A;&#x68C0;&#x51FA;&#xFF08;checkout&#xFF09;&#x64CD;&#x4F5C;<br>
+<code>git diff (&#x6563;&#x5217;&#x503C;)</code>     &#x6BD4;&#x8F83;&#x4E24;&#x6B21;&#x63D0;&#x4EA4;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;&#xFF08;--stat &#x663E;&#x793A;&#x6587;&#x4EF6;&#x4FEE;&#x6539;&#xFF09;<br>
+<code>git diff --word-diff</code>  &#x6309;&#x5355;&#x8BCD;&#x663E;&#x793A;&#x6240;&#x505A;&#x7684;&#x4FEE;&#x6539;</p>
+<h3 class="mume-header" id="%E7%AC%AC4%E7%AB%A0-%E5%A4%9A%E6%AC%A1%E6%8F%90%E4%BA%A4">&#x3010;&#x7B2C;4&#x7AE0; &#x591A;&#x6B21;&#x63D0;&#x4EA4;&#x3011;</h3>
 
-	<h3>【第8章 通过变基净化历史】</h3>
-　　git rebase master　可以将带有很多小分支和分岔的历史改造成一部较为平滑的线性历史<BR> 
-　　移植分支等，了解一下<BR> 
+<p>&#x5DE5;&#x4F5C;&#x533A; -- &#x6682;&#x5B58;&#x533A; -- &#x7248;&#x672C;&#x5E93;<br>
+<code>git diff --staged</code>  &#x663E;&#x793A;&#x6682;&#x5B58;&#x533A;&#x4E0E;&#x63D0;&#x4EA4;&#x7684;&#x4E0D;&#x540C;<br>
+<code>git diff</code>           &#x663E;&#x793A;&#x6682;&#x5B58;&#x533A;&#x4E0E;&#x5DE5;&#x4F5C;&#x533A;&#x7684;&#x4E0D;&#x540C;<br>
+<code>git reset HEAD .</code>   &#x91CD;&#x7F6E;&#x6682;&#x5B58;&#x533A;&#xFF0C;&#x64A4;&#x56DE;&#x4FEE;&#x6539;</p>
+<p>&#x4F7F;&#x7528; .gitignore &#x5FFD;&#x7565;&#x975E;&#x7248;&#x672C;&#x63A7;&#x5236;&#x6587;&#x4EF6;</p>
+<ul>
+<li class="point">&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#x5199;&#x597D;&#x8DEF;&#x5F84;&#x5373;&#x53EF;&#x5FFD;&#x7565;</li>
+</ul>
+<p><code>git stash</code>  &#x5C06;&#x5DE5;&#x4F5C;&#x533A;&#x548C;&#x6682;&#x5B58;&#x533A;&#x7684;&#x4FEE;&#x6539;&#x4FDD;&#x5B58;&#x5728;&#x50A8;&#x85CF;&#x6808;&#xFF08;stash stack&#xFF09;&#x7684;&#x7F13;&#x5B58;&#x533A;&#x4E2D;<br>
+<code>git stash pop</code>  &#x6062;&#x590D;&#x88AB;&#x50A8;&#x85CF;&#x7684;&#x4FEE;&#x6539;<br>
+<code>git stash list</code>  &#x5217;&#x51FA;&#x50A8;&#x85CF;&#x6808;</p>
+<h3 class="mume-header" id="%E7%AC%AC5%E7%AB%A0-%E7%89%88%E6%9C%AC%E5%BA%93">&#x3010;&#x7B2C;5&#x7AE0; &#x7248;&#x672C;&#x5E93;&#x3011;</h3>
 
-	<h3>【第9章 版本库间的交换】</h3>
-　　有很多协议来访问版本库，如file,http,ftp,ssh等<BR> 
-　　如 git clone file:///Users/git_book.git<BR> 
-　　给版本库起名字，使用git remote add<BR> 
-　　　　git remote add MyClone file:///tmp/git_book_clone.git<BR> 
-　　去掉名字，使用git remote rm<BR> 
-　　　　git remote rm MyClone<BR> 
-　　查看推送提交路径　git remote --verbose<BR> 
-　　从另一个版本库中获取提交（将克隆版本库传送到本地版本库）<BR> 
-　　　　git fetch MyClone<BR> 
-　　将本地提交传送到远程版本库，使用push<BR> 
-　　　　git push clone feature-a<BR> 
-　　　　（推送至clone所指向的远程版本库并更新分支指针）<BR> 
-　　显示远程跟踪分支<BR> 
-　　　　git branch -r<BR> 
-　　从远程分支中分岔出一个本地分支<BR> 
-　　　　git checkout -b feature-b clone/feature-b<BR> 
-　　利用本地分支操作别处的版本库<BR> 
-　　　　git fetch clone feature-b:my-feature-b　（别处分支名:本地分支名）<BR> 
-　　pull = fetch + merge<BR> 
-　　提交本地test分支，作为远程的master分支<BR> 
-　　　　git push origin test:master<BR> 
-　　删除远程版本库中的分支<BR> 
-　　　　git push clone :feature-a<BR> 
+<p>&#x8BB2;&#x7684;&#x662F;&#x5E95;&#x5C42;&#x7ED3;&#x6784;&#xFF08;&#x7BA1;&#x9053;&#x5C42;&#xFF09;</p>
+<h3 class="mume-header" id="%E7%AC%AC6%E7%AB%A0-%E5%88%86%E6%94%AF">&#x3010;&#x7B2C;6&#x7AE0; &#x5206;&#x652F;&#x3011;</h3>
 
-	<h3>【第10章 版本标签】</h3>
-　　为一个分支创建标签（-m为注释）<BR> 
-　　　　git tag 1.1.0.0 master "Freshly built"<BR> 
-　　推送标签<BR> 
-　　　　git push origin 1.1.0.0<BR> 
-　　在日志中查看标签<BR> 
-　　　　git log --decorate<BR> 
+<p><code>git branch new_branch1</code>     &#x521B;&#x5EFA;&#x65B0;&#x5206;&#x652F;<br>
+<code>git branch --list</code>          &#x67E5;&#x770B;&#x6240;&#x6709;&#x5206;&#x652F;<br>
+<code>git checkout new_branch1</code>   &#x5207;&#x6362;&#x5230;&#x5206;&#x652F;<br>
+<code>git branch -d new_branch1</code>  &#x5220;&#x9664;&#x5206;&#x652F;&#xFF08;-D&#x5F3A;&#x5236;&#x5220;&#x9664;&#xFF09;</p>
+<p>checkout&#x88AB;&#x62D2;&#x7EDD;&#xFF08;&#x7531;&#x4E8E;&#x5DE5;&#x4F5C;&#x533A;&#x8FD8;&#x5B58;&#x5728;&#x7740;&#x4E00;&#x4E9B;&#x4FEE;&#x6539;&#xFF09;&#x65F6;&#x89E3;&#x51B3;&#x529E;&#x6CD5;</p>
+<ul>
+<li class="point">1. &#x63D0;&#x4EA4;&#x4FEE;&#x6539;&#x5373;&#x53EF;      <code>git commit --all</code></li>
+<li class="point">2. &#x653E;&#x5F03;&#x4FEE;&#x6539;&#x5F3A;&#x5236;&#x5207;&#x6362;  <code>git checkout --force new_branch1</code></li>
+<li class="point">3. &#x50A8;&#x85CF;&#x4FEE;&#x6539;&#x5373;&#x53EF;      <code>git stash</code>  &#xFF08;<code>git stash pop</code>&#x6062;&#x590D;&#xFF09;</li>
+</ul>
+<p>&#x6062;&#x590D;&#x88AB;&#x5220;&#x9664;&#x5206;&#x652F;</p>
+<ul>
+<li class="point">1. <code>git reflog</code>  &#x67E5;&#x627E;&#x8981;&#x6062;&#x590D;&#x5206;&#x652F;&#x7684;&#x6563;&#x5217;&#x503C;</li>
+<li class="point">2. <code>git branch new_branch1 d765a1e</code>  &#x6572;&#x5165;&#x6563;&#x5217;&#x503C;&#x6062;&#x590D;</li>
+</ul>
+<h3 class="mume-header" id="%E7%AC%AC7%E7%AB%A0-%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF">&#x3010;&#x7B2C;7&#x7AE0; &#x5408;&#x5E76;&#x5206;&#x652F;&#x3011;</h3>
 
-	<h3>【其它】</h3>
-　　git gui　图形界面<BR> 
+<p><code>git merge new_branch1</code>  &#x5408;&#x5E76;&#x5206;&#x652F;&#xFF08;&#x5728;&#x8981;&#x5408;&#x5E76;&#x7684;&#x5206;&#x652F;&#x4E0A;&#x5982;master&#xFF09;</p>
+<p>&#x624B;&#x52A8;&#x5408;&#x5E76;&#x89E3;&#x51B3;&#x51B2;&#x7A81;</p>
+<ul>
+<li class="point">&#x6CD5;&#x4E00;&#xFF1A;&#x624B;&#x52A8;&#x7F16;&#x8F91;&#x53D7;&#x5F71;&#x54CD;&#x6587;&#x4EF6;&#x81F3;&#x4E0D;&#x51B2;&#x7A81;</li>
+<li class="point">&#x6CD5;&#x4E8C;&#xFF1A;<code>git checkout --theirs tests/</code>  &#xFF08;--theirs&#x53EA;&#x91C7;&#x7528;&#x522B;&#x4EBA;&#x7684;&#x7248;&#x672C;&#x6587;&#x4EF6;&#xFF09;<br>
+<code>git checkout --ours tests/</code>    &#xFF08;--ours  &#x53EA;&#x91C7;&#x7528;&#x81EA;&#x5DF1;&#x7684;&#x7248;&#x672C;&#x6587;&#x4EF6;&#xFF09;<br>
+&#x6700;&#x540E;&#x518D; <code>git add .</code> &#x548C; <code>git commit</code></li>
+</ul>
+<p>&#x5FEB;&#x8FDB;&#x5408;&#x5E76;</p>
+<ul>
+<li class="point">&#x4E00;&#x6761;&#x7EBF;&#x4E0A;&#xFF0C;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#x6CA1;&#x6709;&#x52A8;&#xFF0C;&#x800C;&#x53E6;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#x4E00;&#x53EA;&#x66F4;&#x65B0;&#xFF0C;&#x8981;&#x628A;&#x843D;&#x540E;&#x7684;&#x5206;&#x652F;&#x5FEB;&#x8FDB;&#x5408;&#x5E76;<br>
+<code>git checkout behind_branch</code><br>
+<code>git merge front_branch</code></li>
+</ul>
+<h3 class="mume-header" id="%E7%AC%AC8%E7%AB%A0-%E9%80%9A%E8%BF%87%E5%8F%98%E5%9F%BA%E5%87%80%E5%8C%96%E5%8E%86%E5%8F%B2">&#x3010;&#x7B2C;8&#x7AE0; &#x901A;&#x8FC7;&#x53D8;&#x57FA;&#x51C0;&#x5316;&#x5386;&#x53F2;&#x3011;</h3>
 
-　　新建远程仓库，将代码上传到Github的示例操作：<BR> 
-	<p class="coding">echo "# New Repo" >> README.md<BR> 
-	git init<BR> 
-	git add README.md<BR> 
-	git commit -m "first commit"<BR> 
-	git remote add origin https://github.com/github-id/repo-id.git<BR> 
-	git push -u origin master</p>
+<p><code>git rebase master</code>  &#x53EF;&#x4EE5;&#x5C06;&#x5E26;&#x6709;&#x5F88;&#x591A;&#x5C0F;&#x5206;&#x652F;&#x548C;&#x5206;&#x5C94;&#x7684;&#x5386;&#x53F2;&#x6539;&#x9020;&#x6210;&#x4E00;&#x90E8;&#x8F83;&#x4E3A;&#x5E73;&#x6ED1;&#x7684;&#x7EBF;&#x6027;&#x5386;&#x53F2;<br>
+&#x79FB;&#x690D;&#x5206;&#x652F;&#x7B49;&#xFF0C;&#x4E86;&#x89E3;&#x4E00;&#x4E0B;</p>
+<h3 class="mume-header" id="%E7%AC%AC9%E7%AB%A0-%E7%89%88%E6%9C%AC%E5%BA%93%E9%97%B4%E7%9A%84%E4%BA%A4%E6%8D%A2">&#x3010;&#x7B2C;9&#x7AE0; &#x7248;&#x672C;&#x5E93;&#x95F4;&#x7684;&#x4EA4;&#x6362;&#x3011;</h3>
 
-	<h3>【Issues】</h3>
-　　git pull 提示 fatal: refusing to merge unrelated histories （新建远程仓库常遇到）<BR> 
-　　　　两个根本不相干的 git 库，一个是本地库，一个是远端库，然后本地要去推送到远端，远端觉得这个本地库跟自己不相干，所以告知无法合并。<BR> 
-　　　　解决方法一：从远端库拉下来代码，本地要加入的代码放到远端库下载到本地的库，再上传。<BR> 
-　　　　解决方法二：不相干的分支强行合并。 git pull origin master --allow-unrelated-histories
-<!--/HTMLBUILERPART0--><br>
-<br>
-</p>
+<p>&#x6709;&#x5F88;&#x591A;&#x534F;&#x8BAE;&#x6765;&#x8BBF;&#x95EE;&#x7248;&#x672C;&#x5E93;&#xFF0C;&#x5982;file,http,ftp,ssh&#x7B49;<br>
+&#x5982; <code>git clone file:///Users/git_book.git</code></p>
+<p>&#x7ED9;&#x7248;&#x672C;&#x5E93;&#x8D77;&#x540D;&#x5B57;&#xFF0C;&#x4F7F;&#x7528;git remote add</p>
+<ul>
+<li class="point"><code>git remote add MyClone file:///tmp/git_book_clone.git</code></li>
+</ul>
+<p>&#x53BB;&#x6389;&#x540D;&#x5B57;&#xFF0C;&#x4F7F;&#x7528;<code>git remote rm</code></p>
+<ul>
+<li class="point"><code>git remote rm MyClone</code></li>
+</ul>
+<p>&#x67E5;&#x770B;&#x63A8;&#x9001;&#x63D0;&#x4EA4;&#x8DEF;&#x5F84;  <code>git remote --verbose</code></p>
+<p>&#x4ECE;&#x53E6;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x5E93;&#x4E2D;&#x83B7;&#x53D6;&#x63D0;&#x4EA4;&#xFF08;&#x5C06;&#x514B;&#x9686;&#x7248;&#x672C;&#x5E93;&#x4F20;&#x9001;&#x5230;&#x672C;&#x5730;&#x7248;&#x672C;&#x5E93;&#xFF09;</p>
+<ul>
+<li class="point"><code>git fetch MyClone</code></li>
+</ul>
+<p>&#x5C06;&#x672C;&#x5730;&#x63D0;&#x4EA4;&#x4F20;&#x9001;&#x5230;&#x8FDC;&#x7A0B;&#x7248;&#x672C;&#x5E93;&#xFF0C;&#x4F7F;&#x7528;push</p>
+<ul>
+<li class="point"><code>git push clone feature-a</code> &#xFF08;&#x63A8;&#x9001;&#x81F3;clone&#x6240;&#x6307;&#x5411;&#x7684;&#x8FDC;&#x7A0B;&#x7248;&#x672C;&#x5E93;&#x5E76;&#x66F4;&#x65B0;&#x5206;&#x652F;&#x6307;&#x9488;&#xFF09;</li>
+</ul>
+<p>&#x663E;&#x793A;&#x8FDC;&#x7A0B;&#x8DDF;&#x8E2A;&#x5206;&#x652F;</p>
+<ul>
+<li class="point"><code>git branch -r</code><br>
+&#x4ECE;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x4E2D;&#x5206;&#x5C94;&#x51FA;&#x4E00;&#x4E2A;&#x672C;&#x5730;&#x5206;&#x652F;</li>
+<li class="point"><code>git checkout -b feature-b clone/feature-b</code><br>
+&#x5229;&#x7528;&#x672C;&#x5730;&#x5206;&#x652F;&#x64CD;&#x4F5C;&#x522B;&#x5904;&#x7684;&#x7248;&#x672C;&#x5E93;</li>
+<li class="point"><code>git fetch clone feature-b:my-feature-b</code>  &#xFF08;&#x522B;&#x5904;&#x5206;&#x652F;&#x540D;:&#x672C;&#x5730;&#x5206;&#x652F;&#x540D;&#xFF09;</li>
+</ul>
+<p>pull = fetch + merge</p>
+<p>&#x63D0;&#x4EA4;&#x672C;&#x5730;test&#x5206;&#x652F;&#xFF0C;&#x4F5C;&#x4E3A;&#x8FDC;&#x7A0B;&#x7684;master&#x5206;&#x652F;</p>
+<ul>
+<li class="point"><code>git push origin test:master</code></li>
+</ul>
+<p>&#x5220;&#x9664;&#x8FDC;&#x7A0B;&#x7248;&#x672C;&#x5E93;&#x4E2D;&#x7684;&#x5206;&#x652F;</p>
+<ul>
+<li class="point"><code>git push clone :feature-a</code></li>
+</ul>
+<h3 class="mume-header" id="%E7%AC%AC10%E7%AB%A0-%E7%89%88%E6%9C%AC%E6%A0%87%E7%AD%BE">&#x3010;&#x7B2C;10&#x7AE0; &#x7248;&#x672C;&#x6807;&#x7B7E;&#x3011;</h3>
+
+<p>&#x4E3A;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#x521B;&#x5EFA;&#x6807;&#x7B7E;&#xFF08;-m&#x4E3A;&#x6CE8;&#x91CA;&#xFF09;</p>
+<ul>
+<li class="point"><code>git tag 1.1.0.0 master &quot;Freshly built&quot;</code></li>
+</ul>
+<p>&#x63A8;&#x9001;&#x6807;&#x7B7E;</p>
+<ul>
+<li class="point"><code>git push origin 1.1.0.0</code></li>
+</ul>
+<p>&#x5728;&#x65E5;&#x5FD7;&#x4E2D;&#x67E5;&#x770B;&#x6807;&#x7B7E;</p>
+<ul>
+<li class="point"><code>git log --decorate</code></li>
+</ul>
+<h3 class="mume-header" id="%E5%85%B6%E5%AE%83">&#x3010;&#x5176;&#x5B83;&#x3011;</h3>
+
+<p><code>git gui</code>  &#x56FE;&#x5F62;&#x754C;&#x9762;</p>
+<p>&#x65B0;&#x5EFA;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#xFF0C;&#x5C06;&#x4EE3;&#x7801;&#x4E0A;&#x4F20;&#x5230;Github&#x7684;&#x793A;&#x4F8B;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="shell" class="language-shell"><span class="token keyword">echo</span> <span class="token string">&quot;# New Repo&quot;</span> <span class="token operator">&gt;&gt;</span> README.md  
+<span class="token function">git</span> init  
+<span class="token function">git</span> add README.md  
+<span class="token function">git</span> commit -m <span class="token string">&quot;first commit&quot;</span>  
+<span class="token function">git</span> remote add origin https://github.com/github-id/repo-id.git  
+<span class="token function">git</span> push -u origin master  
+</pre>
+<h3 class="mume-header" id="issues">&#x3010;Issues&#x3011;</h3>
+
+<p>git pull &#x63D0;&#x793A; <code>fatal: refusing to merge unrelated histories</code> &#xFF08;&#x65B0;&#x5EFA;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x5E38;&#x9047;&#x5230;&#xFF09;</p>
+<ul>
+<li class="point">&#x4E24;&#x4E2A;&#x6839;&#x672C;&#x4E0D;&#x76F8;&#x5E72;&#x7684; git &#x5E93;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x672C;&#x5730;&#x5E93;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x8FDC;&#x7AEF;&#x5E93;&#xFF0C;&#x7136;&#x540E;&#x672C;&#x5730;&#x8981;&#x53BB;&#x63A8;&#x9001;&#x5230;&#x8FDC;&#x7AEF;&#xFF0C;&#x8FDC;&#x7AEF;&#x89C9;&#x5F97;&#x8FD9;&#x4E2A;&#x672C;&#x5730;&#x5E93;&#x8DDF;&#x81EA;&#x5DF1;&#x4E0D;&#x76F8;&#x5E72;&#xFF0C;&#x6240;&#x4EE5;&#x544A;&#x77E5;&#x65E0;&#x6CD5;&#x5408;&#x5E76;&#x3002;</li>
+<li class="point">&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;&#x4ECE;&#x8FDC;&#x7AEF;&#x5E93;&#x62C9;&#x4E0B;&#x6765;&#x4EE3;&#x7801;&#xFF0C;&#x672C;&#x5730;&#x8981;&#x52A0;&#x5165;&#x7684;&#x4EE3;&#x7801;&#x653E;&#x5230;&#x8FDC;&#x7AEF;&#x5E93;&#x4E0B;&#x8F7D;&#x5230;&#x672C;&#x5730;&#x7684;&#x5E93;&#xFF0C;&#x518D;&#x4E0A;&#x4F20;&#x3002;</li>
+<li class="point">&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;&#x4E0D;&#x76F8;&#x5E72;&#x7684;&#x5206;&#x652F;&#x5F3A;&#x884C;&#x5408;&#x5E76;&#x3002; <code>git pull origin master --allow-unrelated-histories</code></li>
+</ul>
+
+</div>
 
 
 

@@ -177,9 +177,9 @@
 
 			.image.incontent
 			{
-				width: 60%;
+				width: 70%;
 				margin: 0 2em 2em 0;
-				padding-left: 1em;
+				padding-left: 3em;
 			}
 
 			.image.selfpadding
@@ -206,6 +206,14 @@
 				}
 
 	/* Lists */
+
+		ul li.point
+		{
+			margin-left: 2em;
+			display: list-item;
+    		text-align: -webkit-match-parent;
+			list-style-type: disc;
+		}
 
 		ul.default
 		{
@@ -265,10 +273,10 @@
 		
 		ul.style .posted {
 			padding: 0em 0em 1em 0em;
-			margin-left: 2em;
+			margin-left: 1em;
 			letter-spacing: 1px;
-			font-size: 10pt;
-			color: #A2A2A2;
+			font-size: 11pt;
+			color: rgb(155, 155, 155);
 		}
 
 		ul.style .homepage-posted {
@@ -305,6 +313,16 @@
 		}
 
 	/* Codes */
+
+		code
+		{
+			margin: 0 0 0 4px;
+			padding: 2px 7px 2px 7px;
+			border-radius: 3px;
+			background: #e9e9e9;
+			font-size: 10pt;
+			font-family: Consolas;
+		}
 
 		.coding
 		{
@@ -347,7 +365,24 @@
 				background: #de3d27;
 				color: #FFF !important;
 			}
+	
 			
+/*********************************************************************************/
+/* Markdown Preview                                                              */
+/*********************************************************************************/
+
+	div.markdown-preview p,ul
+	{
+		padding-left: 2em;
+	}
+
+	div.markdown-preview h2
+	{
+		font-size: 17pt;
+		padding: 0.4em 0 0.6em 0;
+		color: rgb(24, 57, 168);
+	}
+
 /*********************************************************************************/
 /* Header                                                                        */
 /*********************************************************************************/
