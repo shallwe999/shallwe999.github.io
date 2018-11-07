@@ -1,0 +1,90 @@
+/***  Article lists  ***/
+
+    #article-lists{
+    width: 750px;
+    overflow: hidden;
+    margin-top: 10px;
+    }
+
+    #article-lists ul{
+    list-style-type: none;
+    }
+
+    #article-lists ul li{
+    background-color: rgb(231, 231, 231);
+    padding: 20px 20px 10px 20px;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 15px;
+    }
+
+
+    .atc-title{
+    text-decoration: none;
+    color: rgb(209, 147, 53);
+    font-size: 24px;
+    font-family: Arial, Tahoma, "Microsoft YaHei", "微软雅黑";
+    letter-spacing: 2px;
+    }
+
+    .atc-left p{
+    color: gray;
+    font-size: 14px;
+    font-family: Arial, Tahoma, "SimSuncss", "宋体";
+    }
+
+    .atc-left img{
+    width: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+    }
+
+    .atc-left{
+    float: left;
+    width: 450px;
+    overflow: hidden;
+    }
+
+    .atc-right{
+    float: right;
+    margin-top: 20px;
+    margin-right: 10px;
+    width: 200px;
+    overflow: hidden;
+    }
+
+    .atc-right img{
+    width: 200px;
+    height: 120px;
+    }
+
+
+    .atc-page{
+    height: 60px;
+    margin-top: 10px;
+    text-align: center;
+    padding-top: 20px;
+    }
+
+    .atc-page a{
+    border: 1px solid #71b0bb;
+    text-decoration: none;
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+    -moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    }
+
+    .atc-page a:link,.page a:visited{
+    color: #000000;
+    }
+    .atc-page a:hover,.page a:active{
+    color: #FFF;
+    background-color: #d66b58;
+    }
