@@ -71,8 +71,8 @@ skel.init({
 });
 
 
-/* 初始化返回顶部功能 */
-window.addEventListener('scroll',function(e){
+/*** 初始化返回顶部功能 ***/
+window.addEventListener('scroll', function(e){
 	var t = document.documentElement.scrollTop || document.body.scrollTop;
 	if(t > 400){
 		$('.back_top').show();
@@ -86,15 +86,42 @@ function clickBackToTop() {
 	return false;
 };
 
-/* 全局页面中间内容高度 */
-$().ready(function(){
-	var Height = $(window).height();
-	var h = (Height - 212) + 'px' //头部和底部总高为212
-   $('.sriContainer').css('min-height',h);
+
+/*** 置顶栏显示 ***/
+var topnavStatus = false;  // 标示是否切换到置顶栏状态
+var isAnimated = true;  // 标示动画是否执行
+var topnavInit = true;  //第一次调用
+
+window.addEventListener('scroll', function(e){
+	var t = document.documentElement.scrollTop || document.body.scrollTop;
+	if (t > 300){
+		if (!topnavStatus){
+			isAnimated = false;
+		}
+		$('#topnav').show();
+		if(topnavInit || (!isAnimated && topnavStatus)){  //如果动画没执行过
+			$("#topnav").css("top", "-46px");  //每次要执行动画之前都将top值设为-45px
+			$("#topnav").animate({"top": "0px"}, 450);
+			isAnimated = true;
+			topnavInit = false;
+		}
+		topnavStatus = true;
+	}else{
+		topnavInit = false;
+		if (topnavStatus){
+			isAnimated = false;
+		}
+		if(!isAnimated && !topnavStatus){  //如果动画没执行过
+			$("#topnav").css("top", "0px");  //每次要执行动画之前都将top值设为-45px
+			$("#topnav").animate({"top": "-46px"}, 450);
+			isAnimated = true;
+		}
+		topnavStatus = false;
+	}
 });
 
 
-/* Github 名片功能（作者：xuelangZF） */
+/*** Github 名片功能（作者：xuelangZF） ***/
 window.onload = (function() {
 	var e = document.getElementById('github-usercard');
 	var username = e.getAttribute("user");
@@ -157,4 +184,19 @@ window.onload = (function() {
 	  e.innerHTML = "Get user info failed.";
 	}
 });
+
+
+/*** 实现Loading界面展示 ***/
+
+//监听加载状态改变
+document.onreadystatechange = completeLoading;
+
+//加载状态为complete时移除loading效果
+function completeLoading() {
+    if (document.readyState == "complete") {
+		var loadingMask = document.getElementById('loading-circle');
+		$('#loading-circle').animate({opacity: 0}, 400, function(){loadingMask.parentNode.removeChild(loadingMask);});
+    }
+}
+
 
